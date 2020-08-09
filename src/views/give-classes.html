@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" data-lt-installed="true">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <script src="/scripts/addField.js" defer></script>
 
 </head>
+
 <body id="page-give-classes">
 
     <div id="container">
@@ -22,17 +24,20 @@
             <div class="top-bar-container">
                 <a href="/"><img src="/images/icons/back.svg" alt="Voltar"></a>
                 <img src="/images/logo.svg" alt="Proffy">
-            </div><!--top-bar-container-->
+            </div>
+            <!--top-bar-container-->
 
             <div class="header-content">
                 <strong>Que incrivel que você quer dar aulas</strong>
                 <p>O primeiro passo, é preencher esse formulário</p>
-        
-            </div><!--header-content-->
-        </header><!--page-header-->
+
+            </div>
+            <!--header-content-->
+        </header>
+        <!--page-header-->
 
         <main>
-           <form action="" id="create-class">
+            <form action="" id="create-class">
                 <fieldset>
                     <legend>Seus dados</legend>
 
@@ -60,8 +65,8 @@
                 <fieldset>
                     <legend>Sobre a aula</legend>
                     <div class="select-block">
-                        <label for="subjet"> Matéria</label>
-                        <select name="subjet" id="subject" required>
+                        <label for="subject"> Matéria</label>
+                        <select name="subject" id="subject" required>
                             <option value="">Selecione uma opção</option>
                             {%for subject in subjects %}
                             <option value="{{loop.index}}">{{subject}}</option>
@@ -95,31 +100,31 @@
 
                         <div class="input-block">
                             <label for="time_from">Das</label>
-                            <input type="time" name="time_from[]" required>   
+                            <input type="time" name="time_from[]" required>
                         </div>
 
                         <div class="input-block">
                             <label for="time_to">Até</label>
-                            <input type="time" name="time_to[]" required>   
+                            <input type="time" name="time_to[]" required>
                         </div>
 
                     </div>
-                    
-                 
+
+
                 </fieldset>
-           </form>  
+            </form>
 
-           <footer>
-               <p>
-                   <img src="/images/icons/warning.svg" alt="Aviso importante">
-                   Importante! <br>
-                   Preencha todos os dados
-               </p>
-               <button type="submit" form="create-class">Salvar cadastro</button>
+            <footer>
+                <p>
+                    <img src="/images/icons/warning.svg" alt="Aviso importante"> Importante! <br> Preencha todos os dados
+                </p>
+                <button type="submit" form="create-class">Salvar cadastro</button>
 
-           </footer>
+            </footer>
         </main>
-    </div><!--container-->
+    </div>
+    <!--container-->
 
 </body>
+
 </html>

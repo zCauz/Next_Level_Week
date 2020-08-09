@@ -1,36 +1,36 @@
-const proffys = [
-    {name:"Diego fernandes",
-    avatar: "https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4",
-    whatsapp: "8997832356" ,
-    bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
-    subject:"Química",
-    cost: "20", 
-    weekday: [0],
-    time_from: [720],
-    time_to: [1220]
-},
-{
-    name:"Daniele Evangelista",
-    avatar: "https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4",
-    whatsapp: "8997832356" ,
-    bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
-    subject:"Química",
-    cost: "20", 
-    weekday: [1],
-    time_from: [720],
-    time_to: [1220]
-},
-{
-    name:"Mayk Brito",
-    avatar: "https://avatars2.githubusercontent.com/u/6643122?s=460&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d928v=4",
-    whatsapp: "8997832356" ,
-    bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
-    subject:"Química",
-    cost: "20", 
-    weekday: [1],
-    time_from: [720],
-    time_to: [1220]
-}
+const proffys = [{
+        name: "Diego fernandes",
+        avatar: "https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4",
+        whatsapp: "8997832356",
+        bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
+        subject: "Química",
+        cost: "20",
+        weekday: [0],
+        time_from: [720],
+        time_to: [1220]
+    },
+    {
+        name: "Daniele Evangelista",
+        avatar: "https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4",
+        whatsapp: "8997832356",
+        bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
+        subject: "Química",
+        cost: "20",
+        weekday: [1],
+        time_from: [720],
+        time_to: [1220]
+    },
+    {
+        name: "Mayk Brito",
+        avatar: "https://avatars2.githubusercontent.com/u/6643122?s=460&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d928v=4",
+        whatsapp: "8997832356",
+        bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
+        subject: "Química",
+        cost: "20",
+        weekday: [1],
+        time_from: [720],
+        time_to: [1220]
+    }
 ]
 
 const subjects = [
@@ -78,14 +78,14 @@ function pageGiveClasses(req, res) {
     if (isNotEmpty) {
 
         data.subject = getSubject(data.subject)
-
+        console.log(data)
         proffys.push(data)
 
         return res.redirect("/study")
     }
 
-    
-    return res.render("give-classes.html", {subjects, weekdays})
+
+    return res.render("give-classes.html", { subjects, weekdays })
 }
 
 const express = require('express')
@@ -100,9 +100,9 @@ nunjucks.configure('src/views', {
 
 server
 // configurar arquivos estaticos (css, scripts, imagens)
-.use(express.static("public"))
-//rotas de aplicacao
-.get("/", pageLanding)
-.get("/study", pageStudy)
-.get("/give-classes", pageGiveClasses)
-.listen(5500)
+    .use(express.static("public"))
+    //rotas de aplicacao
+    .get("/", pageLanding)
+    .get("/study", pageStudy)
+    .get("/give-classes", pageGiveClasses)
+    .listen(5500)
